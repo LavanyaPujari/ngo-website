@@ -1,0 +1,69 @@
+<!-- volunteer.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Volunteer - Basti Ki Pathshala</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="logo.png" alt="Basti Ki Pathshala Logo">
+      <div class="header-text">
+        <h1>Basti Ki Pathshala</h1>
+        <p>Where learning knows no boundaries</p>
+      </div>
+    </div>
+
+    <!-- ✅ Updated Navigation with Hamburger -->
+    <nav>
+      <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="volunteer.html">Volunteer</a>
+        <a href="donate.html">Donate</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="content-section">
+    <div class="card">
+      <h2>Volunteer With Us</h2>
+      <form class="donation-form" onsubmit="return showConfirmation(event);">
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="tel" placeholder="Phone Number" required />
+        <textarea placeholder="Why do you want to volunteer?" rows="4" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    &copy; 2025 Basti Ki Pathshala Foundation. All rights reserved.
+  </footer>
+
+  <!-- ✅ Confirmation Popup Script -->
+  <script>
+    function showConfirmation(event) {
+      event.preventDefault();
+      alert("Thank you for signing up as a volunteer! We’ll get in touch with you soon.");
+      event.target.reset();
+      return false;
+    }
+  </script>
+
+  <!-- ✅ Hamburger Toggle Script -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
